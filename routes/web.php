@@ -19,3 +19,6 @@ Route::get('/dashboard', 'AdminController@index');
 
 Route::get('/artikel/tambah','ArtikelController@tambah');
 Route::post('/artikel/upload','ArtikelController@upload');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
