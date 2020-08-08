@@ -14,7 +14,7 @@
           <img src="{{asset('lte/dist/img/avatar5.png')}}" class="rounded-circle" alt="User Image">
         </div>
         <div class="info" style="align:center">
-          <p style="font-family:arial; color:#000000">Welcome Wifda !
+          <p style="font-family:arial; color:#000000">Welcome {{ Auth::User()->name }}
           </p>
         </div>
       </div>
@@ -23,19 +23,19 @@
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">          
             <li class="nav-item">         
-              <a href="/profilperusahaan" class="nav-link">
+              <a href="/dashboard" class="nav-link">
                 <i class="nav-icon fa fa-book"></i>
                 <p>Read Articles</p>
               </a>
             </li>
             <li class="nav-item">         
-              <a href="/petaadli" class="nav-link">
+              <a href="/artikel/tambah" class="nav-link">
                 <i class="nav-icon fa fa-pen"></i>
                 <p>Write Articles</p>
               </a>
             </li>
             <li class="nav-item">         
-              <a href="/grafik" class="nav-link">
+              <a href="#" class="nav-link">
                 <i class="nav-icon fa fa-star"></i>
                 <p>Popular Events</p>
               </a>

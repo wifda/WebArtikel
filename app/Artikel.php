@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Artikel extends Model
 {
     //
-    protected $primaryKey = "ARTIKEL_ID";
+    protected $primaryKey = "artikel_id";
     protected $table ="artikel";
     protected $fillable = ['GAMBAR_ID', 'STATUS_ID', 'ARTIKEL_TITLE', 'ARTIKEL_KUTIPAN', 'ARTIKEL_KONTEN'];
 

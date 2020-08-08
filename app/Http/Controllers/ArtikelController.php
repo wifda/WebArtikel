@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Gambar;
+use App\Status;
+use App\Artikel;
+use DB;
 
 class ArtikelController extends Controller
 {
@@ -19,9 +23,9 @@ class ArtikelController extends Controller
             $resource = $request->file('gambar');
             $name = $resource->getClientOriginalName();
             $image = new Gambar;
-            $image->IMAGE=$resource->getClientOriginalName();
-            $resource->move(\base_path() ."/public/data_file", $image->IMAGE);
-            // $save = DB::table('gambar')->insert(['gambar' => $gambar->gambar]);
+            $image->GAMBAR_NAMA=$resource->getClientOriginalName();
+            $resource->move(\base_path() ."/public/data_file", $image->GAMBAR_NAMA);
+            // $save = DB::table('gambar')->insert(['image' => $image->GAMBAR_NAMA]);
             
             $image->save();
             
@@ -39,7 +43,7 @@ class ArtikelController extends Controller
             // die();
             $id = Artikel::create([
                 'STATUS_ID' =>$request->status_id,
-                'GAMBAR_ID' => $request->gambar_id,
+                'GAMBAR_ID' => $image->gambar_id,
                 'ARTIKEL_TITLE' => $request->title,
                 'ARTIKEL_KUTIPAN' => $request->kutipan,
                 'ARTIKEL_KONTEN' => $request->konten

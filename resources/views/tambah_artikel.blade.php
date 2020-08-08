@@ -9,34 +9,38 @@
                 <div class="form-group">
                     <label>Gambar Thumbnails</label>
                     <br>
-                    <input type="file" name="image">
+                    <input type="file" name="gambar">
+                </div>
+                <div class="form-group">
+                    <label>Judul</label>
+                    <input type="text" name="title" class="form-control" placeholder="Judul">
+
+                    @if($errors->has('title'))
+                        <div class="text-danger">
+                            {{ $errors->first('title')}}
+                        </div>
+                    @endif
                 </div> 
                 <div class="form-group">
-                    <label>Status Bulan</label>
-                    <br>
-                    <select class="form-control form-control-sm mb-3" name="idstatus">
-                        @foreach($status as $s)
-                            <option value="{{$s->ID_STATUS}}">{{$s->STATUS_BULAN}}</option>
-                        @endforeach
-                    </select>
-                </div>
+                    <input type="hidden" name="status_id" value="1">
+                </div> 
                 <div class="form-group">
-                    <label>Proyek</label>
-                    <br>
-                    <select class="form-control form-control-sm mb-3" name="idspesifikasi">
-                        @foreach($proyek_spek as $ps)
-                            <option value="{{$ps->ID_SPESIFIKASI_PROYEK}}">{{$ps->NAMA_SPESIFIKASI_PROYEK}}</option>
-                        @endforeach
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label>Keterangan</label>
-                    <input type="text" name="keterangan" class="form-control" placeholder="Keterangan">
+                    <label>Kutipan</label>
+                    <input type="text" name="kutipan" class="form-control" placeholder="Kutipan">
 
-                    @if($errors->has('keterangan'))
+                    @if($errors->has('kutipan'))
                         <div class="text-danger">
-                            {{ $errors->first('keterangan')}}
+                            {{ $errors->first('kutipan')}}
+                        </div>
+                    @endif
+                </div>
+                <div class="form-group">
+                    <label>Konten</label>
+                    <textarea name="konten" class="form-control" placeholder="Konten"></textarea>
+
+                    @if($errors->has('konten'))
+                        <div class="text-danger">
+                            {{ $errors->first('konten')}}
                         </div>
                     @endif
                 </div>
